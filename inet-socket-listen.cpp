@@ -131,7 +131,7 @@ int main(int argc, char **argv) {
   }
 
   if(!opt_socktype) {
-    std::cerr << "Either --stream or --datagram is required" << std::endl;
+    std::cerr << "Either --tcp or --udp is required" << std::endl;
     help(argv[0]);
   }
 
@@ -141,7 +141,7 @@ int main(int argc, char **argv) {
     }
   } else {
     if(opt_backlog != 0) {
-      std::cerr << "--backlog is for --stream" << std::endl;
+      std::cerr << "--backlog is for --tcp" << std::endl;
       help(argv[0]);
     }
   }
