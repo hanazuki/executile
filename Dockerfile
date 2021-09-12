@@ -3,6 +3,7 @@
 ARG IMAGE=debian:bullseye
 
 FROM ${IMAGE} as builder
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -qq && apt-get install -y --no-install-recommends devscripts equivs git
 
 WORKDIR /tmp/build/src
@@ -12,6 +13,7 @@ COPY . .
 RUN debuild -us -uc
 
 FROM ${IMAGE}
+ARG DEBIAN_FRONTEND=noninteractive
 RUN --mount=type=bind,target=/tmp/build,source=/tmp/build,from=builder \
     apt-get update -qq && \
     apt-get install -y --no-install-recommends /tmp/build/*.deb && \
