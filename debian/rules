@@ -1,0 +1,5 @@
+#!/usr/bin/make -f
+export DH_OPTIONS
+
+%:
+	dh $@ --buildsystem=cmake

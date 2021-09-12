@@ -1,0 +1,20 @@
+Source: executile
+Section: utils
+Priority: optional
+Maintainer: Kasumi Hanazuki <kasumi@rollingapple.net>
+Build-Depends:
+  debhelper-compat (= 12),
+  dh-cmake-compat (= 1),
+  dh-sequence-cmake,
+  cmake (>= 3.15),
+  asciidoctor
+Standards-Version: 4.5.0
+Vcs-Git: http://github.com/hanazuki/executile
+Vcs-Browser: https://github.com/hanazuki/executile
+Homepage: https://github.com/hanazuki/executile
+
+Package: executile
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Program execution utilities
+ executile is a collection of utility programs to execute programs.
