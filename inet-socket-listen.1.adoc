@@ -20,10 +20,10 @@ inet-socket-listen - create a listening TCP/UDP socket for chained program
 
 == Options
 
-*--stream*::
+*--tcp*::
   Creates a TCP socket.
 
-*--datagram*::
+*--udp*::
   Creates a UDP socket.
 
 *-names*=_NAME_::

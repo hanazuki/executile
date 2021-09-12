@@ -20,8 +20,8 @@
 #include "common/socket.hpp"
 
 constexpr struct option long_options[] = {
-  {"stream", no_argument, 0, 's'},
-  {"datagram", no_argument, 0, 'd'},
+  {"tcp", no_argument, 0, 't'},
+  {"udp", no_argument, 0, 'u'},
   {"ipv4", no_argument, 0, '4'},
   {"ipv6", no_argument, 0, '6'},
   {"backlog", required_argument, 0, 'b'},
@@ -33,11 +33,10 @@ constexpr struct option long_options[] = {
 };
 
 [[noreturn]] static void help(char const *progname) {
-  std::cerr
-    << "Usage: " << progname
-    << " (--stream|--datagram) [-4|--ipv4|-6|--ipv6|--ipv6only] [--name=<name>] [--numeric-host] "
-       "[--numeric-service] [--backlog=<backlog>] <host> <service> <prog> [<prog-args>]"
-    << std::endl;
+  std::cerr << "Usage: " << progname
+            << " (--tcp|--udp) [-4|--ipv4|-6|--ipv6|--ipv6only] [--name=<name>] [--numeric-host] "
+               "[--numeric-service] [--backlog=<backlog>] <host> <service> <prog> [<prog-args>]"
+            << std::endl;
 
   exit(EXIT_FAILURE);
 }
@@ -60,17 +59,17 @@ int main(int argc, char **argv) {
   int opt;
   while((opt = getopt_long(argc, argv, "+46", long_options, nullptr)) != -1) {
     switch(opt) {
-    case 's':
+    case 't':
       if(opt_socktype && opt_socktype != SOCK_STREAM) {
-        std::cerr << "--stream and --datagram are exclusive" << std::endl;
+        std::cerr << "--tcp and --udp are exclusive" << std::endl;
         help(argv[0]);
       }
       opt_socktype = SOCK_STREAM;
       break;
 
-    case 'd':
+    case 'u':
       if(opt_socktype && opt_socktype != SOCK_DGRAM) {
-        std::cerr << "--stream and --datagram are exclusive" << std::endl;
+        std::cerr << "--udp and --udp are exclusive" << std::endl;
         help(argv[0]);
       }
       opt_socktype = SOCK_DGRAM;
