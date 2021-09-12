@@ -26,23 +26,23 @@ inet-socket-listen - create a listening TCP/UDP socket for chained program
 *--datagram*::
   Creates a UDP socket.
 
-*-names=_NAME_*::
+*-names*=_NAME_::
   Gives the socket a name, which will be passed to the chained program as `LISTEN_FDNAMES`.
 
-*-4*, *--ipv4*:
+*-4*, *--ipv4*::
   Binds the socket to an IPv4 address.
 
-*-6*, *--ipv6*:
+*-6*, *--ipv6*::
   Binds the socket to an IPv6 address.
 
-*--ipv6only*:
+*--ipv6only*::
   Binds the socket to an IPv6 address with `IPV6_V6ONLY` enabled.
 
-*--backlog=_BACKLOG_*:
+*--backlog*=_BACKLOG_::
   Sets the backlog size for a TCP socket. Defaults to `SOMAXCONN`.
 
-*--numeric-host*:
+*--numeric-host*::
   If specified, no name lookup is done for _HOST_.
 
-*--numeric-service*:
+*--numeric-service*::
   If specified, no name lookup is done for _SERVICE_.
