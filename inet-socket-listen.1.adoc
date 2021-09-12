@@ -1,0 +1,48 @@
+= inet-socket-listen(1)
+Kasumi Hanazuki
+:doctype: manpage
+:mansource: github.com/hanazuki/executile
+
+== Name
+
+inet-socket-listen - create a listening TCP/UDP socket for chained program
+
+
+== Synopsis
+
+*inet-socket-listen* [_OPTION_]... _HOST_ _SERVICE_ _PROG_ [__PROG-ARG__]...
+
+
+== Description
+
+*inet-socket-listen* creates a listening socket with specified parameters and passes its file descripter in the systemd-compatible way.  See https://www.freedesktop.org/software/systemd/man/sd_listen_fds.html[sd_listen_fds(3)] for how the FD is passed.
+
+
+== Options
+
+*--stream*::
+  Creates a TCP socket.
+
+*--datagram*::
+  Creates a UDP socket.
+
+*-names=_NAME_*::
+  Gives the socket a name, which will be passed to the chained program as `LISTEN_FDNAMES`.
+
+*-4*, *--ipv4*:
+  Binds the socket to an IPv4 address.
+
+*-6*, *--ipv6*:
+  Binds the socket to an IPv6 address.
+
+*--ipv6only*:
+  Binds the socket to an IPv6 address with `IPV6_V6ONLY` enabled.
+
+*--backlog=_BACKLOG_*:
+  Sets the backlog size for a TCP socket. Defaults to `SOMAXCONN`.
+
+*--numeric-host*:
+  If specified, no name lookup is done for _HOST_.
+
+*--numeric-service*:
+  If specified, no name lookup is done for _SERVICE_.

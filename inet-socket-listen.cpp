@@ -36,7 +36,7 @@ constexpr struct option long_options[] = {
   std::cerr
     << "Usage: " << progname
     << " (--stream|--datagram) [-4|--ipv4|-6|--ipv6|--ipv6only] [--name=<name>] [--numeric-host] "
-       "[--numeric-service] [--backlog=<backlog>] <host> <service> <prog> [<prog-args>...]"
+       "[--numeric-service] [--backlog=<backlog>] <host> <service> <prog> [<prog-args>]"
     << std::endl;
 
   exit(EXIT_FAILURE);
