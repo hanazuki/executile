@@ -4,11 +4,11 @@ ARG IMAGE=debian:bullseye
 
 FROM ${IMAGE} as builder
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update -qq && apt-get install -y --no-install-recommends devscripts equivs git
+RUN apt-get update -qq && apt-get install -y --no-install-recommends devscripts
 
 WORKDIR /tmp/build/src
 COPY debian/control debian/
-RUN yes | mk-build-deps -i
+RUN apt-get build-dep -y .
 COPY . .
 RUN debuild -us -uc
 
