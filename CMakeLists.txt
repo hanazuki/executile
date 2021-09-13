@@ -10,6 +10,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -pedantic -Werror -Wno-missing-field-initializers
+    $<$<CONFIG:Release>:-O3>)
+endif()
+
 file(GLOB COMMON_SOURCES common/*.cpp)
 add_library(executile-common STATIC ${COMMON_SOURCES})
 

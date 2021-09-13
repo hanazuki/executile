@@ -1,3 +1,9 @@
+executile (0.1.1) UNRELEASED; urgency=medium
+
+  * Enable optimization for release builds.
+
+ -- Kasumi Hanazuki <kasumi@rollingapple.net>  Mon, 13 Sep 2021 04:59:25 +0000
+
 executile (0.1.0) unstable; urgency=medium
 
   * Initial release.
