@@ -21,8 +21,6 @@ add_library(executile-common STATIC ${COMMON_SOURCES})
 add_executable(inet-socket-listen inet-socket-listen.cpp)
 target_link_libraries(inet-socket-listen executile-common)
 
-file(GLOB MAN_SOURCES *.adoc)
-
 include(GNUInstallDirs)
 
 install(
@@ -31,9 +29,13 @@ install(
   DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 if(ASCIIDOCTOR_FOUND)
+  file(GLOB MAN_SOURCES *.adoc)
+
   add_asciidoctor_manpages_target(manpages MAN_OUTPUTS ${MAN_SOURCES})
 
   install(
     FILES ${MAN_OUTPUTS}
     DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+else()
+  message(WARNING "Manpages generation is skipped due to missing asciidoctor")
 endif()

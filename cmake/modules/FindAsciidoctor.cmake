@@ -1,6 +1,6 @@
 find_package(PackageHandleStandardArgs)
 
-find_program(ASCIIDOCTOR_EXECUTABLE NAMES asciidoctor)
+find_program(ASCIIDOCTOR_EXECUTABLE NAMES asciidoctor asciidoctorj)
 if(ASCIIDOCTOR_EXECUTABLE)
 
   function(add_asciidoctor_manpages_target _target _out_var)
