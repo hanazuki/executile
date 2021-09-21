@@ -7,7 +7,6 @@
 #include <string>
 #include <vector>
 
-#include <bits/getopt_core.h>
 #include <getopt.h>
 #include <netdb.h>
 #include <sys/socket.h>
