@@ -11,7 +11,7 @@ inet-socket-listen - create a listening TCP/UDP socket for chained program
 
 == Synopsis
 
-*inet-socket-listen* [_OPTION_]... _HOST_ _SERVICE_ _PROG_ [__PROG-ARG__]...
+*inet-socket-listen* [_OPTION_]... [--] _HOST_ _SERVICE_ _PROG_ [__PROG-ARG__]...
 
 
 == Description

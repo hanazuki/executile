@@ -33,10 +33,11 @@ constexpr struct option long_options[] = {
 };
 
 [[noreturn]] static void help(char const *progname) {
-  std::cerr << "Usage: " << progname
-            << " (--tcp|--udp) [-4|--ipv4|-6|--ipv6|--ipv6only] [--name=<name>] [--numeric-host] "
-               "[--numeric-service] [--backlog=<backlog>] <host> <service> <prog> [<prog-args>]"
-            << std::endl;
+  std::cerr
+    << "Usage: " << progname
+    << " (--tcp|--udp) [-4|--ipv4|-6|--ipv6|--ipv6only] [--name=<name>] [--numeric-host] "
+       "[--numeric-service] [--backlog=<backlog>] [--] <host> <service> <prog> [<prog-args>]"
+    << std::endl;
 
   exit(EXIT_FAILURE);
 }
