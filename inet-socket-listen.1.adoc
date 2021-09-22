@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Zlib
 = inet-socket-listen(1)
 Kasumi Hanazuki
 :doctype: manpage

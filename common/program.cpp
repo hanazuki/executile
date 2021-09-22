@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Zlib
 #include "program.hpp"
 
 #include <system_error>

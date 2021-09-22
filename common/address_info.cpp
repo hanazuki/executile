@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Zlib
 #include "address_info.hpp"
 
 #include <stdexcept>

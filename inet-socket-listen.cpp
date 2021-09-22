@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Zlib
 #include <cerrno>
 #include <charconv>
 #include <cstdlib>

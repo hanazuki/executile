@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Zlib
 #include "socket.hpp"
 
 #include <system_error>

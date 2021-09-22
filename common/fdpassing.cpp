@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: Zlib
 #include "fdpassing.hpp"
 
 #include <algorithm>
