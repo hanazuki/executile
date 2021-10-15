@@ -5,6 +5,7 @@
 #include <charconv>
 #include <cstdlib>
 #include <cstring>
+#include <optional>
 #include <stdexcept>
 #include <string>
 
