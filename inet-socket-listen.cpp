@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
 
     case 'u':
       if(opt_socktype && opt_socktype != SOCK_DGRAM) {
-        std::cerr << "--udp and --udp are exclusive" << std::endl;
+        std::cerr << "--tcp and --udp are exclusive" << std::endl;
         help(argv[0]);
       }
       opt_socktype = SOCK_DGRAM;
