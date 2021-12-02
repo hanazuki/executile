@@ -14,8 +14,8 @@ jobs:
         image:
           - debian:sid
           - debian:bullseye
-#          - ubuntu:focal
-          - ubuntu:hirsute
+          - ubuntu:impish
+          - ubuntu:jammy
         platform:
           - linux/amd64
           - linux/arm64
