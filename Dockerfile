@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:experimental
 
-ARG IMAGE=debian:bullseye
+ARG IMAGE=debian:sid
 
 FROM ${IMAGE} as builder
 ARG DEBIAN_FRONTEND=noninteractive

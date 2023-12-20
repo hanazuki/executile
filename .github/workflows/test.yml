@@ -13,7 +13,7 @@ jobs:
       matrix:
         image:
           - debian:sid
-          - debian:bullseye
+          - debian:bookworm
           - ubuntu:jammy
         platform:
           - linux/amd64
