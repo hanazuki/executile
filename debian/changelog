@@ -1,6 +1,7 @@
 executile (0.1.1) UNRELEASED; urgency=medium
 
   * Enable optimization for release builds.
+  * Fix missing #include error.
 
  -- Kasumi Hanazuki <kasumi@rollingapple.net>  Mon, 13 Sep 2021 04:59:25 +0000
 
