@@ -10,12 +10,14 @@ namespace executile {
   address_info::address_info(::addrinfo *head): head_(head) {
   }
 
-  address_info::address_info(address_info &&other) {
+  address_info::address_info(address_info &&other): head_(nullptr) {
     std::swap(head_, other.head_);
   }
 
   address_info::~address_info() {
-    freeaddrinfo(head_);
+    if(head_ != nullptr) {
+      freeaddrinfo(head_);
+    }
     head_ = nullptr;
   }
 
