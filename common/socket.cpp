@@ -14,7 +14,7 @@ namespace executile {
     }
   }
 
-  socket::socket(socket &&other) {
+  socket::socket(socket &&other): fd_(-1) {
     std::swap(fd_, other.fd_);
   }
 
