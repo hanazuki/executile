@@ -14,8 +14,8 @@ jobs:
       matrix:
         image:
           - debian:sid
-          - debian:bookworm
-          - ubuntu:jammy
+          - debian:trixie
+          - ubuntu:noble
         platform:
           - linux/amd64
           - linux/arm64
